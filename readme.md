@@ -1,17 +1,21 @@
 #Twitch Popular Streams  
   
-A simple interface for popular streams. Emits a list of streamers at the specified interval.  
+A simple tracker for popular streams. Emits addStream when it finds a new featured streamer. Emits removeStream when a previously added streamer goes offline.
   
 #Example
   
 ```
 var t = new TwitchPopularStreams({
 	interval: 10,
-	client_id: "###############"
+	client_id: "############################"
 })
 
-t.on('streams', function(streams) {
-	console.log(streams)
+t.on('addStream', function(stream) {
+	console.log("add "+stream)
+})
+
+t.on('removeStream', function(stream) {
+	console.log("remove "+stream)
 })
 ```
 
