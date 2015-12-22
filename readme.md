@@ -7,8 +7,7 @@ A simple interface for popular streams. Emits a list of streamers at the specifi
 ```
 var t = new TwitchPopularStreams({
 	interval: 10,
-	client_id: ###############,
-	client_secret: ##############
+	client_id: "###############"
 })
 
 t.on('streams', function(streams) {
