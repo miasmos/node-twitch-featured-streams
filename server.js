@@ -1,6 +1,6 @@
 "use strict"
 var emitter = require('events').EventEmitter
-var twitchAPI = require('node-twitchtv')
+var twitchAPI = require('node-twitchtv-stephenpoole')
 
 class TwitchPopularStreams extends emitter {
 	constructor(opts) {
