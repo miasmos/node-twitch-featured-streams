@@ -6,7 +6,7 @@ class TwitchPopularStreams extends emitter {
 	constructor(opts) {
 		super()
 		if (!opts) opts = {};
-		if (!opts.client_id) console.error('Twitch Client ID or Client Secret not supplied!')
+		if (!opts.client_id) console.error('Twitch Client ID not supplied!')
 		this.interval = opts.interval ? opts.interval*1000 : 60000
 		this.twitchAPI = new twitchAPI(opts)
 		this.streamers = [];
@@ -37,7 +37,7 @@ class TwitchPopularStreams extends emitter {
 			if (streams.indexOf(self.streamers[i]) == -1) {
 				//if the stream is in the current featured list, we know it's live
 				//for all other streams, check if it's offline, and if so, emit an event
-				self._getStream(self.streamers[i], function(res) {
+				self._getStreamStatus(self.streamers[i], function(res) {
 					if (!res) {
 						self.emit("removeStream", self.streamers[i])
 						self.streamers.splice(i,1)
@@ -55,7 +55,7 @@ class TwitchPopularStreams extends emitter {
 		})
 	}
 
-	_getStream(channel,cb) {
+	_getStreamStatus(channel,cb) {
 		var self = this;
 		this.twitchAPI.streamsChannel({"channel":channel}, function(err, res) {
 			if (!err && res) {
