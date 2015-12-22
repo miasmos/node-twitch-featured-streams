@@ -2,6 +2,12 @@
   
 A simple tracker for popular streams. Emits addStream when it finds a new featured streamer. Emits removeStream when a previously added streamer goes offline.
   
+#Gettin' Started  
+  
+ ```
+ npm install
+ ```  
+   
 #Example
   
 ```
