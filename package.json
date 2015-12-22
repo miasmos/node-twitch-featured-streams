@@ -1,0 +1,33 @@
+{
+  "name": "node-twitch-featured-streams",
+  "version": "0.0.1",
+  "description": "Queries the Twitch.tv api and emits events when a stream becomes popular or goes offline",
+  "main": "server.js",
+  "dependencies": {
+    "node-twitchtv": "^0.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenpoole/node-twitch-featured-streams.git"
+  },
+  "keywords": [
+    "twitch",
+    "featured",
+    "streams",
+    "streamers",
+    "stream",
+    "streamer",
+    "node"
+  ],
+  "author": "Stephen Poole <stephenwpoole@gmail.com> (http://github.com/stephenpoole)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephenpoole/node-twitch-featured-streams/issues"
+  },
+  "homepage": "https://github.com/stephenpoole/node-twitch-featured-streams#readme"
+}
