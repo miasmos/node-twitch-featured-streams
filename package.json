@@ -1,6 +1,6 @@
 {
   "name": "node-twitch-featured-streams",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Queries the Twitch.tv api and emits events when a stream becomes popular or goes offline",
   "main": "server.js",
   "dependencies": {
