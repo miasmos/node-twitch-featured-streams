@@ -25,7 +25,7 @@ class TwitchPopularStreams extends emitter {
 
 	_getStreamersCallback(streams, self) {
 		for (var i in streams) {
-			if (self.streamers.indexOf(streams[i]) == -1) {
+			if (self.streamers.indexOf(streams[i]) == -1 && typeof streams[i] === 'string') {
 				//if the stream isn't already in our list, add it and emit an event
 				self.streamers.push(streams[i])
 				self.emit("addStream", streams[i])
