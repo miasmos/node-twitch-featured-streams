@@ -69,4 +69,4 @@ class TwitchPopularStreams extends emitter {
 	}
 }
 
-module.export = TwitchPopularStreams
+module.exports = TwitchPopularStreams
