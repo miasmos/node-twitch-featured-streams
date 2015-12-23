@@ -33,7 +33,7 @@ class TwitchPopularStreams extends emitter {
 		}
 
 		for (var i in self.streamers) {
-			if (streams.indexOf(self.streamers[i]) == -1) {
+			if (streams.indexOf(self.streamers[i]) == -1 && typeof streams[i] === 'string') {
 				//if the stream is in the current featured list, we know it's live
 				//for all other streams, check if it's offline, and if so, emit an event
 				self._getStreamStatus(self.streamers[i], function(res) {
