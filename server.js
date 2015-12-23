@@ -7,12 +7,13 @@ class TwitchPopularStreams extends emitter {
 		super()
 		if (!opts) opts = {};
 		if (!opts.client_id) console.error('Twitch Client ID not supplied!')
+		if (!opts.auto) opts.auto = false
 		this.interval = opts.interval ? opts.interval*1000 : 60000
 		this.twitchAPI = new twitchAPI(opts)
 		var self = this;
 		this.twitchAPI.on('auth', function() {
 			self.emit('connected')
-			self.start()
+			if (opts.auto) self.start()
 		})
 		this.streamers = [];
 		this.count = 0;
